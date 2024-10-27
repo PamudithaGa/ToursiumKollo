@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            margin-right: 10px;
+        }
+
+        .form-group div {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .form-group div label {
+            margin-left: 5px;
+        }
+
+        #wrapper {
+            margin-top: 20px;
+        }
+
+        .card {
+            background: #f7f7f7;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h1, .card h2 {
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .card p {
+            margin: 0;
+            padding: 10px 0;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .card ul li {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+
+        .cta-row {
+            text-align: center;
+        }
+
+        .cta-row button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-row button a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="BookH">Tourism Kollo</h1>
+    <div class="contact-form">
+        <form id="contactForm">
+            <div class="form-group">
+                <label for="name">Name: </label>
+                <input id="name" type="text" name="Fname" size="25" required="required" placeholder="Type Here">
+            </div>
+
+            <div class="form-group">
+                <label for="nic">NIC: </label>
+                <input id="nic" type="text" name="nic" size="25" maxlength="12" required="required" placeholder="Type Here">
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country: </label>
+                <input id="address" type="text" name="address" size="25" required="required" placeholder="Type Here">
+            </div>
+
+            <div class="form-group">
+                <label for="lan">Do you prefer English? </label>
+                <div>
+                    <input id="yes" type="radio" name="languagePreference" value="Yes" required>
+                    <label for="yes">Yes</label>
+                </div>
+                <div>
+                    <input id="no" type="radio" name="languagePreference" value="No" required>
+                    <label for="no">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="checkInDate">Check-in Date: </label>
+                <input type="date" id="checkInDate" name="checkInDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="checkOutDate">Check-out Date: </label>
+                <input type="date" id="checkOutDate" name="checkOutDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email: </label>
+                <input id="email" type="email" size="25" name="email" placeholder="Type Here">
+            </div>
+
+            <div class="form-group">
+                <label for="countryCode">Country Code: </label>
+                <select id="countryCode" name="countryCode"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="phoneNumber">Phone Number: </label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" required>
+            </div>
+
+            <div class="form-group">
+                <label for="promoCode">Promo Code (If you have): </label>
+                <input id="promoCode" type="text" name="prom" placeholder="Type Here">
+            </div>
+
+            <button type="submit" class="submit-btn">Book Now</button>
+        </form>
+    </div>
+
+    <!-- Booking Confirmation -->
+    <div id="wrapper" style="display: none;">
+        <div class="card">
+            <div class="icon"></div>
+            <h1>Booking complete!</h1>
+            <h2>Thank You!</h2>
+            <p>We will contact you as soon as possible.<br> By WhatsApp or Email. Please check them.</p>
+        </div>
+        <div class="card">
+            <ul>
+                <li><span>Name</span><span class="cname"></span></li>
+                <li><span>Plan to visit</span><span class="visit"></span></li>
+                <li><span>Check-in Date</span><span class="checkIn"></span></li>
+                <li><span>Check-out Date</span><span class="checkOut"></span></li>
+            </ul>
+        </div>
+        <div class="card">
+            <div class="cta-row">
+                <button><a href="../HTML/main.html">Back to Website</a></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const checkInDate = document.getElementById('checkInDate').value;
+            const checkOutDate = document.getElementById('checkOutDate').value;
+
+            // Display receipt data
+            document.querySelector('.cname').textContent = name;
+            document.querySelector('.visit').textContent = 'Sri Lanka';
+            document.querySelector('.checkIn').textContent = checkInDate;
+            document.querySelector('.checkOut').textContent = checkOutDate;
+
+            // Show the receipt
+            document.getElementById('wrapper').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

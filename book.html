@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Us</title>
+    <link rel="stylesheet" href="../CSS/book.css">
+</head>
+
+
+<body>
+    <h1 class="BookH">Tourism Kollo</h1>
+        <div class="contact-form">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name : </label>
+                    <input id="name" type="text" name="Fname" size="25"   required="required" placeholder="Type Here">
+                </div>
+
+                <div class="form-group" >       
+                    <label for="nic">NIC / Passport No:</label>
+                    <input id="nic" type="text" name="nic" size="25" maxlength="12" required="required" placeholder="Type Here">
+                </div>
+        
+                
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <input id="address" type="text" name="address" size="25"  required="required" placeholder="Type Here">
+                </div>
+
+                <div class="form-group">
+                    <label for="lan">Do you prefer English ? </label>
+                    <div>
+                        <input id="yes" type="radio" name="languagePreference" value="Yes" required>
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div>
+                        <input id="no" type="radio" name="languagePreference" value="No" required>
+                        <label for="no">No</label>
+                    </div>                
+                </div>
+
+                <div class="form-group">
+                    <label for="checkInDate">Check-in Date:</label>
+                    <input type="date" id="checkInDate" name="checkInDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="checkOutDate">Check-out Date:</label>
+                    <input type="date" id="checkOutDate" name="checkOutDate" required>
+                </div>  
+        
+                <div class="form-group">
+                    <label for="email">E mail : </label>
+                    <input id="email" type="email" size="25" name="email" placeholder="Type Here">
+                </div>
+
+                <div class="form-group">
+                    <label for="countryCode">Country Code:</label>
+                    <select id="countryCode" name="countryCode"></select>
+                </div>
+
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="promoCode">Promo Code (If you have) :</label>
+                    <input id="promoCode" type="text" name="prom" placeholder="Type Here">
+                </div>
+              
+                <button type="submit" class="submit-btn">Book Now</button>
+            
+            </form>
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+    <script src="../JS/test.js"></script>
+    <script src="../JS/main.js"></script>
+
+
+</body>
+</html>
